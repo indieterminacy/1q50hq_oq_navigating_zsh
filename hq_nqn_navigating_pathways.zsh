@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+# Legacy Code
+# TODO Use or lose
     # print ${iqi_states}
     # print -l ${iqi_states} | \
     # print ${iqi_states:#~/**/*.git/*}
@@ -13,14 +15,8 @@ function hq_moving {
         then
             verbose=true
     fi
+
     # iqi_states
-    # local iqi_nqn_states_pathway
-    # local iqi_oqo_states_script
-    # local iqi_iqi_states_current
-    # iqi_nqn_states_pathway=(~/1q_ctrl-qiuy/50_Environment/iqi_states/oq_zsh/oqo_scripts)
-    # iqi_oqo_states_script=(iqi_states.zsh)
-    # iqi_iqi_states_current=$iqi_nqn_states_pathway/$iqi_oqo_states_script
-    # if [[ -d $iqi_nqn_states_pathway ]]
     if [[ -f $iqi_iqi_states_current ]]
         then
             if $verbose
@@ -61,32 +57,18 @@ function hq_moving {
     #######################
     # iqi_inputting
     #######################
-    # local nqn_uq_iqi_pathway_searching_logs
-    # local nqn_hq_iqi_pathway_navigating_logs
-    # local iqi_nqn_input_pathway
-    #####
-    local iqi_nqn_input_pathway
     local uq_nqn_search_pathway
-    iqi_nqn_input_pathway=(~/2q_doc-qiuy/50_Environment/uq_searching/iqi_logs)
     uq_nqn_search_pathway=(uq_iqi_searching_)
 
     #######################
     # iqi_outputting
     #######################
     local uq_jq_search_query
-    local iqi_nqn_output_pathway
     local iqi_kq_output_filetype
-    local iqi_nqn_output_path
-    iqi_nqn_output_pathway=(~/2q_doc-qiuy/50_Environment/uq_searching/iqi_logs)
-    iqi_nqn_output_path=(uq_iqi_navigating_$iqi_oq)
-    # local iqi_tq_output_name
     local iqi_output
-    iqi_nqn_output_pathway=(~/2q_doc-qiuy/50_Environment/hq_navigating/iqi_logs)
-    # iqi_tq_output_name=(uq_iqi_searching_$iqi_oq)
     iqi_kq_output_filetype=logs
     #######################
     uq_jq_search_query=$iqi_nqn_input_pathway/$iqi_nqn_search_pathway$iqi_oq/$iqi_logs.$iqi
-    # uq_jq_search_query=$nqn_uq_iqi_pathway_searching_logs/$iqi_nqn_search_pathway$iqi_oq/$iqi_logs.$iqi
     iqi_output=($iqi_nqn_output_pathway/$iqi_nqn_output_path.$iqi_kq_output_filetype)
     if $verbose
         then
@@ -99,8 +81,6 @@ function hq_moving {
 
     # uqu_parsing
     if [[ -f $iqi_nqn_input_pathway/$uq_nqn_search_pathway$iqi_oq.logs ]]
-    # if [[ -d $iqi_nqn_input_pathway ]]
-    # if [[ -d $nqn_uq_iqi_pathway_searching_logs ]]
         then
             if $verbose
                 then
@@ -125,7 +105,6 @@ function hq_moving {
                 }
             }
             ' > $iqi_output &
-            # ' > $nqn_hq_iqi_pathway_navigating_logs/hq_iqi_navigating_$iqi_oq.logs &
         else
             if $verbose
                 then
@@ -137,21 +116,7 @@ function hq_moving {
                     echo "uq_nqn_Search_pathway value: " $uq_nqn_search_pathway
                     echo "iqi_oq value: " $iqi_oq
             fi
-            # TODO Troubleshoot
-            if $verbose
-            # if $variable
-                then
-                    if $verbose
-                        then
-                            echo ""
-                            echo "################################"
-                            echo "WARNING: Directory Pathway for logs, $nqn_uq_iqi_pathway_searching_logs absent"
-                            echo "################################"
-                            echo "INFO: Searching for pathway with different qiuy root pathway"
-                    fi
-            fi
             local alternative_pathway
-            # alternative_pathway=$(print -l $nqn_uq_iqi_pathway_searching_logs | gawk '
             alternative_pathway=$(print -l $iqi_nqn_input_pathway | gawk '
             {
                 print gensub( \
@@ -182,3 +147,4 @@ function hq_moving {
 #     msg="$*"
 #     vifm -c $msg
 # }
+
